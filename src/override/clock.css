@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    width: 7ch;
+    height: 19vh;
+    color: whitesmoke;
+    font-size: 20vh;
+    font-family: sans-serif;
+    line-height: 20.4vh;
+    display: flex;
+    position: relative;
+    background: black;
+    background-size: cover;
+    overflow: hidden;
+    top: 77%;
+    left: 2%;
+    border-radius: 25px;
+}
+
+.clock::before, .clock::after {
+    content: '';
+    width: 7ch;
+    height: 3vh;
+    background: linear-gradient(to top, transparent, black);
+    position: absolute;
+    z-index: 2;
+}
+
+.clock::after {
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, black);
+}
+
+.clock > div {
+    display: flex;
+}
+
+.tick {
+    line-height: 17vh;
+}
+
+.tick-hidden {
+    opacity: 0;
+}
+
+.move {
+    animation: move linear 1s infinite;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(0vh);
+    }
+    to {
+        transform: translateY(-20vh);
+    }
+}
+
+.date {
+    width: 18ch;
+    color: whitesmoke;
+    font-size: 5vh;
+    font-family: sans-serif;
+    top: 77%;
+    right: 2%;
+    text-align: center;
+    position: absolute;
+    background: black;
+    display: flex;
+    overflow: hidden;
+    border-radius: 25px;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.date::before, .date::after {
+    content: '';
+    width: 7ch;
+    height: 3vh;
+    background: linear-gradient(to top, transparent, black);
+    position: absolute;
+    z-index: 2;
+}
+
+.date > div {
+    display: flex;
+}
